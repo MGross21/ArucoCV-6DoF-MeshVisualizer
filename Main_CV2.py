@@ -44,16 +44,16 @@ if __name__ == "__main__":
             # Clear terminal screen
             os.system('cls' if os.name == 'nt' else 'clear')
 
-            table_data = [['Tag ID', 'Position (x, y, z)', 'Rotation (rx, ry, rz)']]
+            table_data = ['Tag ID', '\t\tPosition (x, y, z)', '\t\tRotation (Rx, Ry, Rz)']
             print("Detected Markers:")
-            print(table_data)
+            print(*table_data)
             # Display poses
             for marker_id, pose_data in poses.items():
                 position = pose_data['tvec']
                 rotation = pose_data['rvec']
                 print(str(marker_id),
-                    f"({position[0]:.3f}, {position[1]:.3f}, {position[2]:.3f})",
-                    f"({rotation[0]:.3f}, {rotation[1]:.3f}, {rotation[2]:.3f})"
+                    f"\t\t({position[0]:.3f}, {position[1]:.3f}, {position[2]:.3f})",
+                    f"\t\t({rotation[0]:.3f}, {rotation[1]:.3f}, {rotation[2]:.3f})"
                 )
 
         # Show the frame
