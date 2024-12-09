@@ -2,10 +2,8 @@ import cv2
 import pandas as pd
 from ArucoTag.ArucoTagFinder import ArucoTagFinder
 from ArucoTag.MeshGeneration.MeshGeneration import MeshGeneration
-from terminaltables import AsciiTable
 import os
 import numpy as np
-import time
 
 if __name__ == "__main__":
     # Load metadata and initialize mesh files
@@ -15,7 +13,7 @@ if __name__ == "__main__":
 
     # Initialize ArucoTagFinder with marker length and calibration file
     aruco_processor = ArucoTagFinder(
-        marker_length=1.905e-2, # m converted from in
+        marker_length=1.905e-2, # m converted from 0.5 in
         calibration_file="calibration.json", 
         metadata=metadata
     )
@@ -43,22 +41,20 @@ if __name__ == "__main__":
             frame, new_poses = aruco_processor.render_AR(frame, corners, ids, metadata)
             poses.update(new_poses)
 
-            # Update the table
+            # Clear terminal screen
             os.system('cls' if os.name == 'nt' else 'clear')
 
             table_data = [['Tag ID', 'Position (x, y, z)', 'Rotation (rx, ry, rz)']]
-
+            print("Detected Markers:")
+            print(table_data)
             # Display poses
             for marker_id, pose_data in poses.items():
                 position = pose_data['tvec']
                 rotation = pose_data['rvec']
-                table_data.append([
-                    str(marker_id),
+                print(str(marker_id),
                     f"({position[0]:.3f}, {position[1]:.3f}, {position[2]:.3f})",
                     f"({rotation[0]:.3f}, {rotation[1]:.3f}, {rotation[2]:.3f})"
-                ])
-            table = AsciiTable(table_data)
-            print(table.table)
+                )
 
         # Show the frame
         cv2.imshow("AR with ArUco Markers", frame)
