@@ -2,6 +2,10 @@
 
 By: Michael Gross
 
+## Video Presentation
+
+[Link to Video](https://youtu.be/Cle-1YThlH0)
+
 ## Overview
 
 With the introduction of computer vision into modern robotics, the need to detect objects and track their rotational and translational pose is very important if robots are to interact with them.
