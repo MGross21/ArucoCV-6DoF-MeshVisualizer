@@ -1,0 +1,40 @@
+{
+    "0": {
+        "Name": "Origin",
+        "Description":"",
+        "xyz": [0, 0, 0],
+        "rpy": [0, 0, 0],
+        "whd": [0, 0, 0],
+        "stl_file": null,
+        "color": [1.0, 0.0, 0.0, 1.0],
+        "scale": [1.0, 1.0, 1.0],
+        "visibility": false,
+        "frame_id": "world"
+    },
+
+    "3": {
+        "Name": "Box",
+        "Description":"",
+        "xyz": [0, 0, 0],
+        "rpy": [0, 0, 0],
+        "whd": [0.1016, 0.1016, 0.1016],
+        "stl_file": null,
+        "color": [0.0, 1.0, 0.0, 1.0],
+        "scale": [1.0, 1.0, 1.0],
+        "visibility": true,
+        "frame_id": "world"
+    },
+
+    "9": {
+        "Name": "Box",
+        "Description":"",
+        "xyz": [0, 0, 0],
+        "rpy": [0, 0, 0], 
+        "whd": [0.1016, 0.1016, 0.1016],
+        "stl_file": null,
+        "color": [0.0, 0.0, 1.0, 1.0],
+        "scale": [1.0, 1.0, 1.0],
+        "visibility": true,
+        "frame_id": "world"
+    }
+}
