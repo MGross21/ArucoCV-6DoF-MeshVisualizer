@@ -41,9 +41,3 @@ Applications for this include the ability to generate real time digital twin obj
 Using OpenCV's library and built in methods, this code is able to detect ArUco Tags, display the object internalized axis, and publish the 6DoF pose: `(x, y, z) & (roll, pitch, yaw)`. It should be noted that this is in the frame of the camera and is currently pixel-based. The image below shows the project in an earlier stage demonstrating a per-marker axis plotting.
 
 ![Detected Markers](Images/detected_markers_with_axis.png)
-
-### Example Terminal Detection Indicator Pose
-
-We can see in the following image, an example of the pose detection in meters and radians.
-
-![Pose Detection Terminal](Images/ID_Pose_Detection.png)
